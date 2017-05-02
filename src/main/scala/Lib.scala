@@ -23,6 +23,15 @@ object Lib {
     loop(0)
   }
 
+  def isSorted[A](as: Array[A], ordered: (A, A) => Boolean): Boolean = {
+    def loop(n: Int): Boolean =
+      if (n >= as.length - 1) true
+      else if (!ordered(as(n), as(n + 1))) false
+      else loop(n + 1)
+
+    loop(0)
+  }
+
   def partial1[A, B, C](a: A, f: (A, B) => C): B => C =
     (b: B) => f(a, b)
 }

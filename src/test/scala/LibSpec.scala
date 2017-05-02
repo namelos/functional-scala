@@ -32,4 +32,10 @@ class LibSpec extends FlatSpec with Matchers {
 
     findFirst(Array(1, 2, 3), (x: Int) => x == 1)
   }
+
+  "Is sorted" can "check if an array is sorted" in {
+    isSorted(Array(1, 2, 3), (x: Int, y: Int) => x <= y) shouldBe true
+
+    isSorted(Array(1, 2, 1), (x: Int, y: Int) => x <= y) shouldBe false
+  }
 }
