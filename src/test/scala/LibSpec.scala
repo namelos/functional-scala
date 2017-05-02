@@ -12,4 +12,10 @@ class LibSpec extends FlatSpec with Matchers {
 
     partialedSum(2) shouldBe 3
   }
+
+  "Factorial" can "calculate factorial n" in {
+    factorial(1) shouldBe 1
+    factorial(2) shouldBe 2
+    factorial(5) shouldBe 120
+  }
 }
