@@ -43,4 +43,10 @@ class LibSpec extends FlatSpec with Matchers {
 
     curriedSum(1)(2) shouldBe 3
   }
+
+  "Uncurry" can "uncurry a function" in {
+    val uncurriedSum = uncurry(curry(sum))
+
+    uncurriedSum(1, 2) shouldBe 3
+  }
 }
