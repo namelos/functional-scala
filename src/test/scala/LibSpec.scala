@@ -18,4 +18,12 @@ class LibSpec extends FlatSpec with Matchers {
     factorial(2) shouldBe 2
     factorial(5) shouldBe 120
   }
+
+  "Fib" can "calculate fibonacci n" in {
+    fib(1) shouldBe 1
+    fib(2) shouldBe 1
+    fib(5) shouldBe 5
+    fib(6) shouldBe 8
+    fib(10) shouldBe 55
+  }
 }
