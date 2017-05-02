@@ -26,4 +26,10 @@ class LibSpec extends FlatSpec with Matchers {
     fib(6) shouldBe 8
     fib(10) shouldBe 55
   }
+
+  "Find first" can "find first qualified item index" in {
+    findFirst(Array("one", "two", "three"), (x: String) => x == "two")
+
+    findFirst(Array(1, 2, 3), (x: Int) => x == 1)
+  }
 }
