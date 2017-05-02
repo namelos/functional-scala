@@ -49,4 +49,14 @@ class LibSpec extends FlatSpec with Matchers {
 
     uncurriedSum(1, 2) shouldBe 3
   }
+
+  "Compose" can "compose functions" in {
+    val even = (x: Int) => x % 2 == 0
+    val length = (x: String) => x.length
+
+    val fn = compose(even, length)
+
+    fn("function") shouldBe true
+    fn("compose") shouldBe false
+  }
 }
