@@ -3,11 +3,10 @@ import org.scalatest.{FlatSpec, Matchers}
 import Lib._
 
 class LibSpec extends FlatSpec with Matchers {
+
+  val sum = (x: Int, y: Int) => x + y
+
   "Partial1" can "work" in {
-    val sum = (x: Int, y: Int) => x + y
-
-    sum(1, 2) shouldBe 3
-
     val partialedSum = partial1(1, sum)
 
     partialedSum(2) shouldBe 3
@@ -37,5 +36,11 @@ class LibSpec extends FlatSpec with Matchers {
     isSorted(Array(1, 2, 3), (x: Int, y: Int) => x <= y) shouldBe true
 
     isSorted(Array(1, 2, 1), (x: Int, y: Int) => x <= y) shouldBe false
+  }
+
+  "Curry" can "curry a function" in {
+    val curriedSum = curry(sum)
+
+    curriedSum(1)(2) shouldBe 3
   }
 }
