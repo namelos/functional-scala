@@ -59,4 +59,8 @@ class LibSpec extends FlatSpec with Matchers {
     fn("function") shouldBe true
     fn("compose") shouldBe false
   }
+
+  "List" can "generate" in {
+
+  }
 }
