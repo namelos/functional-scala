@@ -83,4 +83,8 @@ class LibSpec extends FlatSpec with Matchers {
   "Set head" can "set the head of a list" in {
     List.setHead(0, List(1, 2, 3)) shouldBe List(0, 2, 3)
   }
+
+  "Drop" can "drop first nth elements" in {
+    List.drop(List(1, 2, 3, 4, 5), 3) shouldBe List(4, 5)
+  }
 }
