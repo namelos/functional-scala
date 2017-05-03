@@ -60,6 +60,14 @@ class LibSpec extends FlatSpec with Matchers {
     fn("compose") shouldBe false
   }
 
+  "List" can "be constructed with conses" in {
+    val tuple = List(1, 2, 3) match {
+      case Cons(x, Cons(y, Cons(z, Nil))) => (x, y, z)
+    }
+
+    tuple shouldBe (1, 2, 3)
+  }
+
   "Sum" can "get sum of a list" in {
     List.sum(List(1, 2, 3, 4)) shouldBe 10
   }
