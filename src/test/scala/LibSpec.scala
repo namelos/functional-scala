@@ -100,4 +100,8 @@ class LibSpec extends FlatSpec with Matchers {
   "Append" can "append a second list to the first one" in {
     List.append(List(1, 2, 3), List(4, 5, 6)) shouldBe List(1, 2, 3, 4, 5, 6)
   }
+
+  "Init" can "get the initial part of a list" in {
+    List.init(List(1, 2, 3)) shouldBe List(1, 2)
+  }
 }
