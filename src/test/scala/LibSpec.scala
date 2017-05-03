@@ -108,4 +108,12 @@ class LibSpec extends FlatSpec with Matchers {
   "Curried drop while" can "infer callback parameter type" in {
     List.curriedDropWhile(List(1, 2, 3, 4, 5))(_ % 2 == 0) shouldBe List(1, 3, 5)
   }
+
+  "Sum with fold right" can "get the sum of a list" in {
+    List.sumFoldR(List(1, 2, 3, 4)) shouldBe 10
+  }
+
+  "Product with fold right" can "get the product of a list" in {
+    List.productFoldR(List(1, 2, 3, 4)) shouldBe 24
+  }
 }
