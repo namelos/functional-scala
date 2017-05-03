@@ -96,4 +96,8 @@ class LibSpec extends FlatSpec with Matchers {
   "Drop while" can "drop element in list while it is qualified" in {
     List.dropWhile(List(1, 2, 3, 4, 5), (x: Int) => x % 2 == 0) shouldBe List(1, 3, 5)
   }
+
+  "Append" can "append a second list to the first one" in {
+    List.append(List(1, 2, 3), List(4, 5, 6)) shouldBe List(1, 2, 3, 4, 5, 6)
+  }
 }
