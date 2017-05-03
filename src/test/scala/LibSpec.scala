@@ -63,6 +63,7 @@ class LibSpec extends FlatSpec with Matchers {
   "List" can "be constructed with conses" in {
     val tuple = List(1, 2, 3) match {
       case Cons(x, Cons(y, Cons(z, Nil))) => (x, y, z)
+      case _ =>
     }
 
     tuple shouldBe (1, 2, 3)
