@@ -60,7 +60,7 @@ class LibSpec extends FlatSpec with Matchers {
     fn("compose") shouldBe false
   }
 
-  "List" can "generate" in {
-
+  "Tail" can "get the tail of a list" in {
+    List.tail(List(1, 2, 3)) shouldBe List(2, 3)
   }
 }
