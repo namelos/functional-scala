@@ -81,46 +81,40 @@ object List {
       case `l` => drop(tail(l), n - 1)
     }
 
-  def map[A, B](l: List[A], f: A => B): List[B] =
-    l match {
-      case Nil => Nil
-      case Cons(h, t) => Cons(f(h), map(t, f))
-    }
+  def map[A, B](l: List[A], f: A => B): List[B] = l match {
+    case Nil => Nil
+    case Cons(h, t) => Cons(f(h), map(t, f))
+  }
 
-  def dropWhile[A](l: List[A], f: A => Boolean): List[A] =
-    l match {
-      case Nil => Nil
-      case Cons(h, t) =>
-        if (f(h)) dropWhile(t, f)
-        else Cons(h, dropWhile(t, f))
-    }
+  def dropWhile[A](l: List[A], f: A => Boolean): List[A] = l match {
+    case Nil => Nil
+    case Cons(h, t) =>
+      if (f(h)) dropWhile(t, f)
+      else Cons(h, dropWhile(t, f))
+  }
 
-  def append[A](a1: List[A], a2: List[A]): List[A] =
-    a1 match {
-      case Nil => a2
-      case Cons(h, t) => Cons(h, append(t, a2))
-    }
+  def append[A](a1: List[A], a2: List[A]): List[A] = a1 match {
+    case Nil => a2
+    case Cons(h, t) => Cons(h, append(t, a2))
+  }
 
-  def init[A](l: List[A]): List[A] =
-    l match {
-      case Nil => Nil
-      case Cons(_, Nil) => Nil
-      case Cons(h, t) => Cons(h, init(t))
-    }
+  def init[A](l: List[A]): List[A] = l match {
+    case Nil => Nil
+    case Cons(_, Nil) => Nil
+    case Cons(h, t) => Cons(h, init(t))
+  }
 
-  def curriedDropWhile[A](l: List[A])(f: A => Boolean): List[A] =
-    l match {
-      case Nil => Nil
-      case Cons(h, t) =>
-        if (f(h)) dropWhile(t, f)
-        else Cons(h, dropWhile(t, f))
-    }
+  def curriedDropWhile[A](l: List[A])(f: A => Boolean): List[A] = l match {
+    case Nil => Nil
+    case Cons(h, t) =>
+      if (f(h)) dropWhile(t, f)
+      else Cons(h, dropWhile(t, f))
+  }
 
-  def foldRight[A, B](as: List[A], z: B)(f: (A, B) => B): B =
-    as match {
-      case Nil => z
-      case Cons(x, xs) => f(x, foldRight(xs, z)(f))
-    }
+  def foldRight[A, B](as: List[A], z: B)(f: (A, B) => B): B = as match {
+    case Nil => z
+    case Cons(x, xs) => f(x, foldRight(xs, z)(f))
+  }
 
   def sumFoldR(ns: List[Int]) =
     foldRight(ns, 0)(_ + _)
