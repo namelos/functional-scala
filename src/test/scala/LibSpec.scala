@@ -104,4 +104,8 @@ class LibSpec extends FlatSpec with Matchers {
   "Init" can "get the initial part of a list" in {
     List.init(List(1, 2, 3)) shouldBe List(1, 2)
   }
+
+  "Curried drop while" can "infer callback parameter type" in {
+    List.curriedDropWhile(List(1, 2, 3, 4, 5))(_ % 2 == 0) shouldBe List(1, 3, 5)
+  }
 }
