@@ -60,6 +60,14 @@ class LibSpec extends FlatSpec with Matchers {
     fn("compose") shouldBe false
   }
 
+  "Sum" can "get sum of a list" in {
+    List.sum(List(1, 2, 3, 4)) shouldBe 10
+  }
+
+  "Product" can "get the product of a list" in {
+    List.product(List(1, 2, 3, 4)) shouldBe 24
+  }
+
   "Tail" can "get the tail of a list" in {
     List.tail(List(1, 2, 3)) shouldBe List(2, 3)
   }
