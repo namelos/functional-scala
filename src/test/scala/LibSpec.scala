@@ -92,4 +92,8 @@ class LibSpec extends FlatSpec with Matchers {
   "Map" can "map over all list elements" in {
     List.map(List(1, 2, 3), (x: Int) => x * 10) shouldBe List(10, 20, 30)
   }
+
+  "Drop while" can "drop element in list while it is qualified" in {
+    List.dropWhile(List(1, 2, 3, 4, 5), (x: Int) => x % 2 == 0) shouldBe List(1, 3, 5)
+  }
 }

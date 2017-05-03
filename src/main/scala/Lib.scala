@@ -86,4 +86,12 @@ object List {
       case Nil => Nil
       case Cons(h, t) => Cons(f(h), map(t, f))
     }
+
+  def dropWhile[A](l: List[A], f: A => Boolean): List[A] =
+    l match {
+      case Nil => Nil
+      case Cons(h, t) =>
+        if (f(h)) dropWhile(t, f)
+        else Cons(h, dropWhile(t, f))
+    }
 }
