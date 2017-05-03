@@ -120,4 +120,8 @@ class LibSpec extends FlatSpec with Matchers {
   "Fold right" can "keep the data same when given Nil" in {
     List.foldRight(List(1, 2, 3, 4), Nil: List[Int])(Cons(_, _)) shouldBe List(1, 2, 3, 4)
   }
+
+  "Length" can "calculate the length of a list" in {
+    List.length(List(1, 2, 3)) shouldBe 3
+  }
 }
