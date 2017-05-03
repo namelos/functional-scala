@@ -116,4 +116,8 @@ class LibSpec extends FlatSpec with Matchers {
   "Product with fold right" can "get the product of a list" in {
     List.productFoldR(List(1, 2, 3, 4)) shouldBe 24
   }
+
+  "Fold right" can "keep the data same when given Nil" in {
+    List.foldRight(List(1, 2, 3, 4), Nil: List[Int])(Cons(_, _)) shouldBe List(1, 2, 3, 4)
+  }
 }
