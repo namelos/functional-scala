@@ -64,12 +64,12 @@ object List {
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))
 
-  def tail[A](xs: List[A]) = xs match {
+  def tail[A](l: List[A]) = l match {
     case Nil => Nil
     case Cons(_, t) => t
   }
 
-  def setHead[A](h: A, xs: List[A]) = xs match {
+  def setHead[A](h: A, l: List[A]) = l match {
     case Nil => Nil
     case Cons(_, t) => Cons(h, t)
   }
