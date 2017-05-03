@@ -79,4 +79,8 @@ class LibSpec extends FlatSpec with Matchers {
   "Tail" can "get the tail of a list" in {
     List.tail(List(1, 2, 3)) shouldBe List(2, 3)
   }
+
+  "Set head" can "set the head of a list" in {
+    List.setHead(0, List(1, 2, 3)) shouldBe List(0, 2, 3)
+  }
 }
