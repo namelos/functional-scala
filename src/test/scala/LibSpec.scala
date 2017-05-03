@@ -88,4 +88,8 @@ class LibSpec extends FlatSpec with Matchers {
   "Drop" can "drop first nth elements" in {
     List.drop(List(1, 2, 3, 4, 5), 3) shouldBe List(4, 5)
   }
+
+  "Map" can "map over all list elements" in {
+    List.map(List(1, 2, 3), (x: Int) => x * 10) shouldBe List(10, 20, 30)
+  }
 }
