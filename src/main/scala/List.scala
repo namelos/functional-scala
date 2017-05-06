@@ -31,8 +31,8 @@ object List {
   def drop[A](l: List[A], n: Int): List[A] =
     if (n == 0) l
     else l match {
-      case Nil => Nil
       case `l` => drop(tail(l), n - 1)
+      case _ => Nil
     }
 
   def map[A, B](l: List[A], f: A => B): List[B] = l match {
