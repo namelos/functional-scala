@@ -137,6 +137,10 @@ class LibSpec extends FlatSpec with Matchers {
     List.productFoldL(List(1, 2, 3, 4)) shouldBe 24
   }
 
+  "Length" can "get the length of a list" in {
+    List.lengthFoldL(List(1, 2, 3)) shouldBe 3
+  }
+
   "Reverse" can "reverse a list" in {
     List.reverse(List(1, 2, 3)) shouldBe List(3, 2, 1)
   }

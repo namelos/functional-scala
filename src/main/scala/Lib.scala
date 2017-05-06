@@ -123,7 +123,7 @@ object List {
     foldRight(ns, 1.0)(_ * _)
 
   def length[A](l: List[A]): Int =
-    foldRight(l, 0)((_, x) => x + 1)
+    foldRight(l, 0)((_, acc) => acc + 1)
 
   def foldLeft[A, B](l: List[A], z: B)(f: (B, A) => B): B = l match {
     case Nil => z
@@ -136,6 +136,9 @@ object List {
   def productFoldL(ns: List[Double]) =
     foldLeft(ns, 1.0)(_ * _)
 
+  def lengthFoldL[A](l: List[A]) =
+    foldLeft(l, 0)((acc, _) => acc + 1)
+
   def reverse[A](l: List[A]) =
-    foldLeft(l, List[A]())((acc, h) => Cons(h, acc))
+    foldLeft(l, Nil: List[A])((acc, h) => Cons(h, acc))
 }
