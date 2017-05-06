@@ -126,5 +126,9 @@ class ListSpec extends FlatSpec with Matchers {
   "Filter with flat map" can "filter all qualified elements" in {
     filterWithFlatMap(List(1, 2, 3, 4, 5))(_ % 2 == 0) shouldBe List(2, 4)
   }
+
+  "Sum two lists" can "sum elements in two lists respectively and return a new list" in {
+    sumTwoLists(List(1, 2, 3), List(4, 5, 6)) shouldBe List(5, 7, 9)
+  }
 }
 
