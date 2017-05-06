@@ -128,4 +128,12 @@ class LibSpec extends FlatSpec with Matchers {
   "Fold left" can "fold through a whole list" in {
     List.foldLeft(List(1, 2, 3, 4), 0)(_ + _) shouldBe 10
   }
+
+  "Sum fold left" can "get the sum of a list" in {
+    List.sumFoldL(List(1, 2, 3, 4)) shouldBe 10
+  }
+
+  "Product with fold left" can "get the product of a list" in {
+    List.productFoldL(List(1, 2, 3, 4)) shouldBe 24
+  }
 }
