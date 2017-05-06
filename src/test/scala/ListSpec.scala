@@ -118,5 +118,9 @@ class ListSpec extends FlatSpec with Matchers {
   "Filter" can "filter all qualified elements" in {
     filter(List(1, 2, 3, 4, 5))(_ % 2 == 0) shouldBe List(2, 4)
   }
+
+  "Flat map" can "map all element to lists and then concat all lists" in {
+    flatMap(List(1, 2, 3))(i => List(i, i)) shouldBe List(1, 1, 2, 2, 3, 3)
+  }
 }
 

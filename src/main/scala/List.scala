@@ -119,5 +119,8 @@ object List {
       if(f(x)) Cons(x, acc)
       else acc
     )
+
+  def flatMap[A, B](l: List[A])(f: A => List[B]) =
+    concat(mapWithFold(l)(f))
 }
 
