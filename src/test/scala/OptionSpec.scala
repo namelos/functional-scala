@@ -23,4 +23,9 @@ class OptionSpec extends FlatSpec with Matchers {
     Some(1).orElse(Some(0)) shouldBe Some(1)
     None.orElse(Some(0)) shouldBe Some(0)
   }
+
+  "Filter" can "filter value to None if not qualified" in {
+    Some(1).filter(_ % 2 == 0) shouldBe None
+    Some(2).filter(_ % 2 == 0) shouldBe Some(2)
+  }
 }
