@@ -18,4 +18,9 @@ class OptionSpec extends FlatSpec with Matchers {
     Some(1).flatMap((x: Int) => Some(x + 1)) shouldBe Some(2)
     None.flatMap((x: Int) => Some(x + 1)) shouldBe None
   }
+
+  "Or else" can "get" in {
+    Some(1).orElse(Some(0)) shouldBe Some(1)
+    None.orElse(Some(0)) shouldBe Some(0)
+  }
 }
