@@ -101,5 +101,8 @@ object List {
 
   def appendFoldL[A](a1: List[A], a2: List[A]): List[A] =
     foldRWithFoldL(a1, a2)(Cons.apply)
+
+  def mapIncrement(ns: List[Int]) =
+    foldRWithFoldL(ns, Nil: List[Int])((x, acc) => Cons(x + 1, acc))
 }
 
