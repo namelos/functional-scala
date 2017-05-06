@@ -96,7 +96,11 @@ class ListSpec extends FlatSpec with Matchers {
   }
 
   "Append with fold left" can "append a second list to the first one" in {
-    appendFoldL(List(1, 2, 3), List(4, 5, 6)) shouldBe List(1, 2, 3, 4, 5, 6)
+    appendWithFold(List(1, 2, 3), List(4, 5, 6)) shouldBe List(1, 2, 3, 4, 5, 6)
+  }
+
+  "Concat" can "merge all lists" in {
+    concat(List(List(1, 2, 3), List(4, 5, 6), List(7, 8, 9))) shouldBe List(1, 2, 3, 4, 5, 6, 7, 8, 9)
   }
 
   "Map increment" can "increment all element in list" in {
