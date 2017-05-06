@@ -130,5 +130,9 @@ class ListSpec extends FlatSpec with Matchers {
   "Sum two lists" can "sum elements in two lists respectively and return a new list" in {
     sumTwoLists(List(1, 2, 3), List(4, 5, 6)) shouldBe List(5, 7, 9)
   }
+
+  "Zip with" can "zip elements with a in two lists with a given function respectively and return a new list" in {
+    zipWith(List(1, 2, 3), List(4, 5, 6))(_ + _) shouldBe List(5, 7, 9)
+  }
 }
 
