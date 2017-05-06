@@ -94,7 +94,7 @@ object List {
     foldLeft(l, 0)((acc, _) => acc + 1)
 
   def reverse[A](l: List[A]) =
-    foldLeft(l, Nil: List[A])((acc, h) => Cons(h, acc))
+    foldLeft(l, List[A]())((acc, h) => Cons(h, acc))
 
   def foldRWithFoldL[A, B](l: List[A], z: B)(f: (A, B) => B): B =
     foldLeft(reverse(l), z)((b, a) => f(a, b))
@@ -103,6 +103,6 @@ object List {
     foldRWithFoldL(a1, a2)(Cons.apply)
 
   def mapIncrement(ns: List[Int]) =
-    foldRWithFoldL(ns, Nil: List[Int])((x, acc) => Cons(x + 1, acc))
+    foldRWithFoldL(ns, List[Int]())((x, acc) => Cons(x + 1, acc))
 }
 
