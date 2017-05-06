@@ -107,5 +107,8 @@ object List {
 
   def mapDoubleToString(ns: List[Double]) =
     foldRWithFoldL(ns, List[String]())((x, acc) => Cons(x.toString, acc))
+
+  def mapWithFold[A, B](l: List[A])(f: A => B): List[B] =
+    foldRWithFoldL(l, List[B]())((x, acc) => Cons(f(x), acc))
 }
 

@@ -106,5 +106,9 @@ class ListSpec extends FlatSpec with Matchers {
   "Map double to string" can "map all double to string" in {
     mapDoubleToString(List(0.0, 1.0, 2.0)) shouldBe List("0.0", "1.0", "2.0")
   }
+
+  "Map" can "map all element in list over a function" in {
+    mapWithFold(List(1, 2, 3))(_ + 1) shouldBe List(2, 3, 4)
+  }
 }
 
