@@ -122,7 +122,7 @@ class LibSpec extends FlatSpec with Matchers {
   }
 
   "Length" can "calculate the length of a list" in {
-    List.length(List(1, 2, 3)) shouldBe 3
+    List.lengthFoldR(List(1, 2, 3)) shouldBe 3
   }
 
   "Fold left" can "fold through a whole list" in {
