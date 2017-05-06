@@ -94,5 +94,9 @@ class ListSpec extends FlatSpec with Matchers {
   "Fold right with fold left" can "fold through a whole list" in {
     foldRWithFoldL(List(1, 2, 3, 4), 0)(_ + _) shouldBe 10
   }
+
+  "Append with fold left" can "append a second list to the first one" in {
+    appendFoldL(List(1, 2, 3), List(4, 5, 6)) shouldBe List(1, 2, 3, 4, 5, 6)
+  }
 }
 

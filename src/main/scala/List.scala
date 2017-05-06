@@ -98,5 +98,8 @@ object List {
 
   def foldRWithFoldL[A, B](l: List[A], z: B)(f: (A, B) => B): B =
     foldLeft(reverse(l), z)((b, a) => f(a, b))
+
+  def appendFoldL[A](a1: List[A], a2: List[A]): List[A] =
+    foldRWithFoldL(a1, a2)(Cons.apply)
 }
 
