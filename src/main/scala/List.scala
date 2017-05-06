@@ -122,5 +122,11 @@ object List {
 
   def flatMap[A, B](l: List[A])(f: A => List[B]) =
     concat(mapWithFold(l)(f))
+
+  def filterWithFlatMap[A](l: List[A])(f: A => Boolean): List[A] =
+    flatMap(l)(a =>
+      if(f(a)) List(a)
+      else Nil
+    )
 }
 
