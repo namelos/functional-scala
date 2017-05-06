@@ -90,5 +90,9 @@ class ListSpec extends FlatSpec with Matchers {
   "Reverse" can "reverse a list" in {
     reverse(List(1, 2, 3)) shouldBe List(3, 2, 1)
   }
+
+  "Fold right with fold left" can "fold through a whole list" in {
+    foldRWithFoldL(List(1, 2, 3, 4), 0)(_ + _) shouldBe 10
+  }
 }
 
