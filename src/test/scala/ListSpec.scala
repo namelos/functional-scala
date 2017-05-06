@@ -102,5 +102,9 @@ class ListSpec extends FlatSpec with Matchers {
   "Map increment" can "increment all element in list" in {
     mapIncrement(List(1, 2, 3)) shouldBe List(2, 3, 4)
   }
+
+  "Map double to string" can "map all double to string" in {
+    mapDoubleToString(List(0.0, 1.0, 2.0)) shouldBe List("0.0", "1.0", "2.0")
+  }
 }
 

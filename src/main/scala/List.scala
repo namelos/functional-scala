@@ -104,5 +104,8 @@ object List {
 
   def mapIncrement(ns: List[Int]) =
     foldRWithFoldL(ns, List[Int]())((x, acc) => Cons(x + 1, acc))
+
+  def mapDoubleToString(ns: List[Double]) =
+    foldRWithFoldL(ns, List[String]())((x, acc) => Cons(x.toString, acc))
 }
 
