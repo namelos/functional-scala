@@ -110,5 +110,9 @@ class ListSpec extends FlatSpec with Matchers {
   "Map" can "map all element in list over a function" in {
     mapWithFold(List(1, 2, 3))(_ + 1) shouldBe List(2, 3, 4)
   }
+
+  "Filter" can "filter all qualified elements" in {
+    filter(List(1, 2, 3, 4, 5))(_ % 2 == 0) shouldBe List(2, 4)
+  }
 }
 

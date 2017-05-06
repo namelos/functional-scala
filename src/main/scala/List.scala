@@ -110,5 +110,11 @@ object List {
 
   def mapWithFold[A, B](l: List[A])(f: A => B): List[B] =
     foldRWithFoldL(l, List[B]())((x, acc) => Cons(f(x), acc))
+
+  def filter[A](l: List[A])(f: A => Boolean): List[A] =
+    foldRWithFoldL(l, List[A]())((x, acc) =>
+      if(f(x)) Cons(x, acc)
+      else acc
+    )
 }
 
