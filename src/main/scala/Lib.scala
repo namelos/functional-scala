@@ -135,4 +135,7 @@ object List {
 
   def productFoldL(ns: List[Double]) =
     foldLeft(ns, 1.0)(_ * _)
+
+  def reverse[A](l: List[A]) =
+    foldLeft(l, List[A]())((acc, h) => Cons(h, acc))
 }

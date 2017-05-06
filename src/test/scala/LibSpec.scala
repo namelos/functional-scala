@@ -136,4 +136,8 @@ class LibSpec extends FlatSpec with Matchers {
   "Product with fold left" can "get the product of a list" in {
     List.productFoldL(List(1, 2, 3, 4)) shouldBe 24
   }
+
+  "Reverse" can "reverse a list" in {
+    List.reverse(List(1, 2, 3)) shouldBe List(3, 2, 1)
+  }
 }
