@@ -1,5 +1,7 @@
 import org.scalatest.{FlatSpec, Matchers}
 
+import Option._
+
 class OptionSpec extends FlatSpec with Matchers {
   "Option" can "map" in {
     Some(1).map(_ + 1) shouldBe Some(2)
@@ -27,5 +29,9 @@ class OptionSpec extends FlatSpec with Matchers {
   "Filter" can "filter value to None if not qualified" in {
     Some(1).filter(_ % 2 == 0) shouldBe None
     Some(2).filter(_ % 2 == 0) shouldBe Some(2)
+  }
+
+  "Lift" can "lift a plain function map over options" in {
+    lift((x: Int) => x + 1)(Some(1)) shouldBe Some(2)
   }
 }
